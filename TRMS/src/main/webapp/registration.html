@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
 <head>
         <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,50 +20,27 @@
                         <input type="text" name="name" placeholder="password">  
                      </div> 
                 </li>
-                <li  class="loader" > <input type="submit" value="login"> </li>
+                <li  class="loader" > <input onclick="logIn()" type="submit" value="login"> </li>
             </ul>
             <div>
                 <h1 class="pe" style="background-color:lightskyblue;color:lightslategrey">Registration Form</h1>
                 
-                <div class="row">
-
-					<form enctype="application/json" method="post" id="regForm">
-	                    <span class="column" >
-	                        <span>
-	                        	First Name:<input class="inp" type="text" name="fName"><br><br>
-	                        	Last Name:<input class="inp" type="text" name="lName"><br><br>
-	                        	Email:<input type="email" name="email"><br><br>
-	                        </span>
-	                    </span>
-	                    <span class="column">
-	                            <span>
-	                            	Street:<input class="inp" type="text" name="aStreet"><br><br>
-	                            	City:<input class="inp" type="text" name="aCity"><br><br>
-	                            	State:<input class="inp" type="text" name="aState"><br><br>
-	                            	Zip:<input class="inp" type="number" name="zCode"><br><br>
-	                        </span>
-	                            
-	                        </span>
-	                        <span class="column">
-	                            <span>
-	                            	Create UserName: <input type="text" name="un"><br><br>
-	                            	Create Password: <input type="password" name="pw"><br><br>
-	                                &nbsp; Confirm Password:<input type="password" name="cpw"><br><br>
-	                            </span>
-	                    </span>
-                    </form>
-                </div>
-
-
-
-
                <form  class="center" style="background-color:lightgreen" ><br>
                 <div class="inp">
-            
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Employee Id:     <input class="inp" type="text" name="employeeID"><br><br>
+                        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name:<input class="inp" type="text" name="employeeID"><br><br>
+                        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Last Name:<input class="inp" type="text" name="employeeLName"><br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; Email:<input type="email" name="employeeEmail"><br><br>
+                    City:<input class="inp" type="text" name="employeeName">
+                        &nbsp;  Create UserName: <input type="text" name="username1"><br><br>
+                    &nbsp; &nbsp; Create Password: <input type="text" name="password1"><br><br>
+                    &nbsp; Confirm Password:<input type="text" name="password2"><br><br>
                     
-                    <input id="input" type="submit">&nbsp;&nbsp; <button id="button" type="reset" value="Reset">Reset</button> <br>
+                    <input id="100" type="submit"> &nbsp;&nbsp; <button id="200" type="reset" value="Reset">Reset</button>
                 </div>
             </form>  
             </div>
 </body>
+    <script src="registration.js"></script>
+
 </html>
