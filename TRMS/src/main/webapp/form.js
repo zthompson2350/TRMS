@@ -4,16 +4,15 @@ function logIn() {
 }
 // var lastName = document.getElementById('lName').value;
 // var firstName = document.getElementById('fName').value;
-// var email = document.getElementById('email').value;
+// var email = document.getElementById('email').value;g
 
 
 
-var formUrl = 'http://localhost:8080/JRMS/registration.html';
+var formUrl = 'http://localhost:8080/FormServlet/TRForm';
 
 
 function postForm() {
     console.log("in postForm");
-
     let vg = document.getElementById("formid").submit;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -24,8 +23,8 @@ function postForm() {
     }
     xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
-    xhr.send(trash);
     jsonBuilder();
+    xhr.send(trash);
 }
 
 function jsonBuilder() {
@@ -34,12 +33,16 @@ function jsonBuilder() {
     for (var i = 0; i < elements.length - 1; i++) {
         var item = elements.item(i);
         obj[item.name] = item.value;
+        console.log(elements.length);
+        alert(obj);
         console.log(obj);
+        break;
 
 
     }
     var json = JSON.stringify(obj);
     console.log(json);
+    alert(json);
     return json;
 }
 
