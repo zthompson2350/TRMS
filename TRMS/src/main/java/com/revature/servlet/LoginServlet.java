@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		UsernameDaoImpl udi = new UsernameDaoImpl();
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		request.getRequestDispatcher("index.html").include(request, response);
+		request.getRequestDispatcher("login.html").include(request, response);
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		boolean cpw = false;
