@@ -1,7 +1,7 @@
-function logIn() {
-    document.getElementById("loader1");
-    console.log("login clicked");
-}
+// function logIn() {
+//     document.getElementById("loader1");
+//     console.log("login clicked");
+// }
 
 
 var formUrl = 'http://localhost:8080/RegistrationServlet/register';
@@ -24,13 +24,12 @@ function submitPress() {
 }
 
 function clearInput() {
-    document.getElementById('regForm').elements.reset();
     console.log("clear");
-
+    document.getElementById('regForm').elements.reset();
 }
 
-var clearBtn = document.getElementById('button');
-clearBtn.addEventListener("click", clearInput);
+// var clearBtn = document.getElementById('button');
+// clearBtn.addEventListener("click", clearInput);
 
 // var lastName = document.getElementById('').value;
 
@@ -57,8 +56,8 @@ function jsonBuilder() {
 
 window.onload = function() {
     console.log("immediate invoked onload");
-    document.getElementById("input").addEventListener("submit", submitPress, true); //submit button
-    document.getElementById("button").addEventListener("submit", clearInput, true); //reset button
+    document.getElementById("input").addEventListener("click", submitPress, true); //submit button
+    document.getElementById("button").addEventListener("click", clearInput, true); //reset button
 
     // document.getElementById("loader").addEventListener("click", logIn, true);
 
