@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class TRForm {
 	private Date date;
@@ -14,6 +14,7 @@ public class TRForm {
 	private String locationState;
 	private int zipcode;
 	private String courseDescription;
+	private int cost;
 	private String gFormat;
 	private String tEvent;
 	public TRForm() {
@@ -22,7 +23,7 @@ public class TRForm {
 	}
 	public TRForm(Date date, String firstname, String lastname, String email, int employeeID, Date startDate,
 			Date endDate, String locationCity, String locationState, int zipcode, String courseDescription,
-			String gFormat, String tEvent) {
+			int cost, String gFormat, String tEvent) {
 		super();
 		this.date = date;
 		this.firstname = firstname;
@@ -35,6 +36,7 @@ public class TRForm {
 		this.locationState = locationState;
 		this.zipcode = zipcode;
 		this.courseDescription = courseDescription;
+		this.cost = cost;
 		this.gFormat = gFormat;
 		this.tEvent = tEvent;
 	}
@@ -104,6 +106,12 @@ public class TRForm {
 	public void setCourseDescription(String courseDescription) {
 		this.courseDescription = courseDescription;
 	}
+	public int getCost() {
+		return cost;
+	}
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
 	public String getgFormat() {
 		return gFormat;
 	}
@@ -121,6 +129,6 @@ public class TRForm {
 		return "TRForm [date=" + date + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
 				+ ", employeeID=" + employeeID + ", startDate=" + startDate + ", endDate=" + endDate + ", locationCity="
 				+ locationCity + ", locationState=" + locationState + ", zipcode=" + zipcode + ", courseDescription="
-				+ courseDescription + ", gFormat=" + gFormat + ", tEvent=" + tEvent + "]";
+				+ courseDescription + ", cost=" + cost + ", gFormat=" + gFormat + ", tEvent=" + tEvent + "]";
 	}	
 }
