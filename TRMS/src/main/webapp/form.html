@@ -13,9 +13,9 @@
                 <li><a href="registration.html">Register</a></li>
                 <li id="loader1" >
                     <div>
-                        <input type="text" name="name" placeholder="username"> 
-                        <input type="text" name="name" placeholder="password">  
-                     </div> 
+                        <input type="text" name="name" placeholder="username">
+                        <input type="text" name="name" placeholder="password">
+                     </div>
                 </li>
                 <li  id="loader" > <input type="submit" value="login"> </li>
             </ul>
@@ -34,7 +34,7 @@
             <input type="email" name="email">
             &nbsp; &nbsp;
             Employee ID:
-            <input type="text" name="employeeID">
+            <input type="number" name="employeeID"> <!-- THIS NEEDS TO BE TAKEN OUT, CLIENT'S BROWSER SHOULD SEND USERNAME WHICH IS TIED TO AN EID -->
             <br><br>
             <h2>Course info</h2>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -56,17 +56,17 @@
             Course Description:
             <input type="text" name="courseDescription">
             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            Cost: 
-            <input type="number" name="Cost"><br><br>
+            Cost:
+            <input type="number" name="cost"><br><br>
             &nbsp;&nbsp;
             Grading Format:
-            <select>
+            <select name="gFormat">
                 <option value="seventyPassing">70% Pass Passing Grade</option>
                 <option value="eightyPassing">80% Passing Grade</option>
             </select>
             &nbsp;&nbsp;&nbsp;
             Type of Event:
-            <select>
+            <select name="tEvent">
                 <option value="certification">Certification 100%</option>
                 <option value="technicalTraining">Technical Training 90%</option>
                 <option value="universityCourse">University Course 80%</option>
@@ -74,10 +74,10 @@
                 <option value="seminars">Seminars 60%</option>
                 <option value="other">Other 30%</option>
             </select>
-            <br> <br> 
+            <br> <br>
             <br> <br>
             <input type="submit">
-            </form>  
+            </form>
 </body>
     <script src="form.js"></script>
 
