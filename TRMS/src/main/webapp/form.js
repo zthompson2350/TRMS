@@ -34,21 +34,18 @@ function jsonBuilder() {
         var item = elements.item(i);
         obj[item.name] = item.value;
         console.log(elements.length);
-        alert(obj);
-        console.log(obj);
+        // alert(obj);
+        // console.log(obj);
         break;
 
 
     }
     var json = JSON.stringify(obj);
-    console.log(json);
-    alert(json);
+    // console.log(json);
+    // alert(json);
     return json;
 }
 
-function test() {
-    console.log(lastName + firstName);
-}
 
 
 window.onload = function() {
