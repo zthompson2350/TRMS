@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class FormServlet
  */
 public class FormServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 2L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
