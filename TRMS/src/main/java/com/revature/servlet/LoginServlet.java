@@ -16,7 +16,7 @@ import com.revature.daoimpl.UsernameDaoImpl;
  * Servlet implementation class LoginServlet
  */
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 7L;
+	private static final long serialVersionUID = 12L;
        
 
 	/**
@@ -26,19 +26,17 @@ public class LoginServlet extends HttpServlet {
 		UsernameDaoImpl udi = new UsernameDaoImpl();
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		request.getRequestDispatcher("login.html").include(request, response);
+		request.getRequestDispatcher("index.html").include(request, response);
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
 		boolean cpw = false;
 		try {
-			System.out.println("checking password");
 			cpw = udi.correctPassword(name, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(cpw) {
-			System.out.println("cpw");
 			out.print("Welcome, " + name);
 			HttpSession session = request.getSession();
 			session.setAttribute("name", name);
