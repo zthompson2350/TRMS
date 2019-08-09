@@ -89,7 +89,6 @@ li a:hover {
 }
 
 .center {
-
   text-align: center;
 }
 
@@ -116,8 +115,7 @@ li a:hover {
   width: 33.33%;
 }
 
-.onehalfcenter {
-  text-align: center;
+.onehalf{
   margin: auto;
   width: 45.5%;
 }
