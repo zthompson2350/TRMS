@@ -1,7 +1,7 @@
 var btn = document.getElementById("btn");
 btn.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', 'file:///Users/terryim/Desktop/OnewaytoHomework/ImT/TRMS/JRMS/src/main/webapp/WEB-INF/form.html');
+    ourRequest.open('GET', 'file:///Users/terryim/Desktop/OnewaytoHomework/ImT/TRMS/JRMS/src/main/webapp/WEB-INF/form.html', true);
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText);
         console.log(ourData[0]);
