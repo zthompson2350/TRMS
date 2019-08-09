@@ -17,7 +17,7 @@ import com.revature.daoimpl.EmployeeDaoImpl;
  * Servlet implementation class RegistrationServlet
  */
 public class RegistrationServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
