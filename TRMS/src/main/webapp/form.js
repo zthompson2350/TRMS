@@ -5,20 +5,10 @@ function logIn() {
 // var lastName = document.getElementById('lName').value;
 // var firstName = document.getElementById('fName').value;
 // var email = document.getElementById('email').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
-// var lastName = document.getElementById('').value;
 
 
-var formUrl = 'file:///Users/terryim/Desktop/OnewaytoHomework/ImT/TRMS/JRMS/src/main/webapp/WEB-INF/form.html';
+
+var formUrl = 'http://localhost:8080/JRMS/registration.html';
 
 
 function postForm() {
@@ -35,7 +25,7 @@ function postForm() {
     xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
     xhr.send(trash);
-
+    jsonBuilder();
 }
 
 function jsonBuilder() {
@@ -55,4 +45,10 @@ function jsonBuilder() {
 
 function test() {
     console.log(lastName + firstName);
+}
+
+
+window.onload = function() {
+    console.log("immediate invoked onload");
+    document.getElementById("formid").addEventListener("submit", postForm, true);
 }
