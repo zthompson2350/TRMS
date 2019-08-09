@@ -81,3 +81,28 @@ height: 50px;
 .right{
   float:right;
 }
+}
+.center{
+  text-align: center;
+}
+.testing{
+  justify-content: right;
+  width: 50vw;
+  height: 50vw;
+  padding: 14px 16px;
+}
+.inp{
+  justify-content:right;
+}
+.pe {
+  border: 1px solid black; 
+  padding: 20px;
+}
+.column{
+  display: flex;
+flex-direction: column;
+align-items: center;
+  text-align: right;
+}
+body{
+  background-color:lightgreen;
