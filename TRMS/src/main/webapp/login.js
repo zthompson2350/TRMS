@@ -3,7 +3,7 @@ function login() {
 }
 
 function pageload() {
-    loggedIn = false;
+    loggedIn = true;
     username = "bobbert";
 
     if (loggedIn) {
