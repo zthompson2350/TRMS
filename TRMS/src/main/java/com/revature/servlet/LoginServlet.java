@@ -16,7 +16,7 @@ import com.revature.daoimpl.UsernameDaoImpl;
  * Servlet implementation class LoginServlet
  */
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 5L;
+	private static final long serialVersionUID = 6L;
        
 
 	/**
