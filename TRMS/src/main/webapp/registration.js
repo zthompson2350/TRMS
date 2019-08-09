@@ -22,16 +22,9 @@ var clearBtn = document.getElementById('200');
 clearBtn.addEventListener("click", clearInput);
 
 var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
-var lastName = document.getElementById('').value;
+
+
+window.onload = function() {
+    console.log("immediate invoked onload");
+    document.getElementById("pizzaForm").addEventListener("click", sunbmitPress, true);
+}
