@@ -1,8 +1,9 @@
-function login() {
+// function login() {
 
-}
+// }
 
-function pageload() {
+function setLoginButton() {
+    //TODO get these values from the session
     loggedIn = false;
     username = "bobbert";
 
@@ -15,8 +16,7 @@ function pageload() {
     }
 }
 
-
 window.onload = function () {
-    document.getElementById("login").addEventListener("click", login, false);
-    pageload();
+    // document.getElementById("login").addEventListener("click", login, false);
+    setLoginButton();
 }

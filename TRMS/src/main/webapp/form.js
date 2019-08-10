@@ -52,4 +52,5 @@ function jsonBuilder() {
 window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("formid").addEventListener("submit", postForm, true);
+    setLoginButton(); //call login.js's function setLoginButton to deal with the login/logout button
 }

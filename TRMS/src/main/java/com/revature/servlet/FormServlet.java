@@ -25,15 +25,20 @@ public class FormServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("attempting to do the thing");
 		ObjectMapper mapper = new ObjectMapper();
 		FormDaoImpl fdi = new FormDaoImpl();
 		TRForm trf = mapper.readValue(request.getInputStream(), TRForm.class);
+		System.out.println(trf);
 		PrintWriter out = response.getWriter();
 		try {
-			HttpSession session = request.getSession();
-			String username = (String)session.getAttribute("name");
-			UsernameDaoImpl udi = new UsernameDaoImpl();
-			int uid = udi.getUID(username);
+			System.out.println("setting userID");
+			/*
+			 * HttpSession session = request.getSession(); String username =
+			 * (String)session.getAttribute("name"); UsernameDaoImpl udi = new
+			 * UsernameDaoImpl(); int uid = udi.getUID(username);
+			 */
+			int uid = 1;
 			trf.setEmployeeID(uid);
 			fdi.submitForm(trf);
 			out.print("Tuition Reimbursment Form Submitted.");
