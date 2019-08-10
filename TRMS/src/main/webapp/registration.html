@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 
 <head>
-    <title>Registraion Page</title>
+    <title>Registration Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -25,7 +25,7 @@
 
         <div class="row">
 
-            <form enctype="application/json" method="post" id="regForm">
+            <form enctype="application/json" method="post" action="/TRMS/register" id="regForm">
                 <span class="column onethird">
                     <span>
                         First Name:<input class="inp" type="text" name="fName"><br><br>
@@ -59,12 +59,13 @@
             <div class="inp">
 
 
-                <input id="input" type="submit">&nbsp;&nbsp;
+                <button id="input" type="submit" value="submit">Submit</button>
                 <button id="button" type="reset" value="Reset">Reset</button> <br>
             </div>
         </form>
     </div>
     <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="registration.js"></script>
 </body>
 
 </html>

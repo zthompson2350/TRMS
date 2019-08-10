@@ -17,7 +17,7 @@ public class FormDaoImpl implements FormDao {
 	@Override
 	public void submitForm(TRForm form) throws SQLException {
 		Connection conn = cf.getConnection();
-		String sql = "{ call REIM_APP(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "{ CALL NEWFORM(?,?,?,?,?,?,?,?,?,?)";
 		CallableStatement call = conn.prepareCall(sql);
 		/*
 			TODO: Get Employee Name -> Employee ID from session/remove Employee ID from HTML
