@@ -1,4 +1,4 @@
-var formUrl = 'http://localhost:8080/TRMS/TRForm';
+var formUrl = 'http://localhost:8080/TRMS/Status';
 
 
 function postForm() {
@@ -30,7 +30,7 @@ function jsonBuilder() {
     return json;
     break;
 }
-
+//need to have JSON PARSE
 
 
 window.onload = function() {
