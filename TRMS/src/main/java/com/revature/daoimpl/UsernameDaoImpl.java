@@ -11,7 +11,7 @@ import com.revature.util.ConnFactory;
 public class UsernameDaoImpl implements UsernameDao {
 
 	public static ConnFactory cf = ConnFactory.getInstance();
-	
+
 	@Override
 	public boolean usernameExists(String un) throws SQLException {
 		Connection conn = cf.getConnection();
@@ -19,7 +19,8 @@ public class UsernameDaoImpl implements UsernameDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, un);
 		ResultSet rs = ps.executeQuery();
-		if(rs.next()) return true;
+		if (rs.next())
+			return true;
 		return false;
 	}
 
@@ -30,8 +31,9 @@ public class UsernameDaoImpl implements UsernameDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, un);
 		ResultSet rs = ps.executeQuery();
-		if(rs.next()) {
-			if(rs.getString(1).equals(pw)) return true;
+		if (rs.next()) {
+			if (rs.getString(1).equals(pw))
+				return true;
 		}
 		return false;
 	}
@@ -43,10 +45,21 @@ public class UsernameDaoImpl implements UsernameDao {
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, un);
 		ResultSet rs = ps.executeQuery();
-		if(rs.next()) {
+		if (rs.next()) {
 			return rs.getInt(1);
 		}
 		return -1;
 	}
 
+	public String getFullName(String username) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "Select firstname||' '||lastname from employee join username on username.employeeID = employee.employeeID where username.username = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, username);
+		ResultSet rs = ps.executeQuery();
+		if (rs.next()) {
+			return rs.getString(1);
+		}
+		return null;
+	}// end getFullName
 }

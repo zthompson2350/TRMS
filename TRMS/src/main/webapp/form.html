@@ -11,15 +11,15 @@
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="form.html">Tuition Reimbursement Form</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="contact.html">Contact</a></li> -->
         <li><a href="about.html">About</a></li>
         <li><a href="registration.html">Register</a></li>
         <li class="loader"> <a id="login"></a></li>
     </ul>
     <h1 class="text">Tuition Reimbursement Form</h1>
-    <form action="/action_page.php" method="POST" class="onehalf">
+    <form method="POST" class="onehalf">
 
-        <h3 id="username">[username]</h4> <!--to be filled in with javascript-->
+        <h3 id="username">[username | Firstname Lastname]</h4> <!--to be filled in with javascript-->
         <h3 id="date">[Current Date]</h4> <!--to be filled in with javascript-->
         <!-- <h2>Employee info</h2>
         First name:
@@ -46,12 +46,12 @@
         Cost:
         <input type="number" name="cost"><br><br>
         Grading Format:
-        <select >
+        <select name="gFormat">
             <option value="seventyPassing">70% Pass Passing Grade</option>
             <option value="eightyPassing">80% Passing Grade</option>
         </select>
         Type of Event:
-        <select>
+        <select name = "tEvent">
             <option value="certification">Certification 100%</option>
             <option value="technicalTraining">Technical Training 90%</option>
             <option value="universityCourse">University Course 80%</option>

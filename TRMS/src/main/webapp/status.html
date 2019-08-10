@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Form Status</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="form.html">Tuition Reimbursement Form</a></li>
+        <!-- <li><a href="contact.html">Contact</a></li> -->
+        <li><a href="about.html">About</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="status.html">Status of your Applications</a></li>
+        <li class="loader"> <a id="login"></a></li>
+    </ul>
     <h1>Status Page</h1>
     <form>
         Supervisors Approval/Denial: <input id="supervisorApproval"><br>
-        <textarea id = "contactMsg"  rows = "4"
-        cols = "50">Message from Supervisors 
+        <textarea id="contactMsg" rows="4" cols="50">Message from Supervisors 
                </textarea><br>
         Department Apoproval/Denial: <input id="departmentApproval"><br>
-        <textarea id = "contactMsg"  rows = "4"
-        cols = "50">Message from Department Manager 
+        <textarea id="contactMsg" rows="4" cols="50">Message from Department Manager 
                </textarea><br>
         BenCo Approval/Denial: <input id="bencoApproval"><br>
-        <textarea id = "contactMsg"  rows = "4"
-        cols = "50">Message from BenCo 
+        <textarea id="contactMsg" rows="4" cols="50">Message from BenCo 
                </textarea>
 
 
 
     </form>
     <input id="status" type="submit">
+    <script type="text/javascript" src="login.js"></script>
 </body>
+
 </html>
