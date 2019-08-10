@@ -4,7 +4,7 @@
 // }
 
 
-var formUrl = 'http://localhost:8080/RegistrationServlet/register';
+var formUrl = 'http://localhost:8080/TRMS/register';
 
 function submitPress() {
     console.log("in registration Form");
@@ -20,12 +20,12 @@ function submitPress() {
     xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
     xhr.send(trash);
-    jsonBuilder();
+    // jsonBuilder();
 }
 
 function clearInput() {
     console.log("clear");
-    document.getElementById('regForm').elements.reset();
+    document.getElementById('regForm').reset();
 }
 
 // var clearBtn = document.getElementById('button');
@@ -37,7 +37,7 @@ function clearInput() {
 function jsonBuilder() {
     var elements = document.getElementById("regForm").elements;
     var obj = {};
-    for (var i = 0; i < elements.length - 1; i++) {
+    for (var i = 0; i < elements.length; i++) {
         var item = elements.item(i);
         obj[item.name] = item.value;
         // obj.push(elements.item[i]);
