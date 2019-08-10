@@ -17,7 +17,7 @@ import com.revature.daoimpl.EmployeeDaoImpl;
  * Servlet implementation class RegistrationServlet
  */
 public class RegistrationServlet extends HttpServlet {
-	private static final long serialVersionUID = 4L;
+	private static final long serialVersionUID = 16L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -25,8 +25,20 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		EmployeeDaoImpl edi = new EmployeeDaoImpl();
-		RegistrationForm rf = mapper.readValue(request.getInputStream(), RegistrationForm.class);
+		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
+		request.getRequestDispatcher("registration.html").include(request, response);
+		RegistrationForm rf = mapper.readValue(request.getInputStream(), RegistrationForm.class);
+		System.out.println("fName " + rf.getfName());
+		System.out.println("lName " + rf.getlName());
+		System.out.println("email " + rf.getEmail());
+		System.out.println("aStreet " + rf.getaStreet());
+		System.out.println("aCity " + rf.getaCity());
+		System.out.println("aState " + rf.getaState());
+		System.out.println("zCode " + rf.getzCode());
+		System.out.println("un " + rf.getUn());
+		System.out.println("pw " + rf.getPw());
+		System.out.println("cpw " + rf.getCpw());
 		if (rf.getPw().equals(rf.getCpw())) {
 			// Enter Employee Into Database
 			try {
@@ -41,6 +53,7 @@ public class RegistrationServlet extends HttpServlet {
 			// Tell Employee they done fucked up
 			pw.write("<h3>Passwords Do Not Match.</h3>");
 		}
+		pw.close();
 	}
 
 }
