@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
 		boolean cpw = false;
-		System.out.println("password: " + password);
+//		System.out.println("password: " + password);
 		try {
 			cpw = udi.correctPassword(name, password);
 		} catch (SQLException e) {
