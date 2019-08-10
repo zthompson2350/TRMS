@@ -1,18 +1,9 @@
-function logIn() {
-    document.getElementById("loader");
-    console.log("login clicked");
-}
-// var lastName = document.getElementById('lName').value;
-// var firstName = document.getElementById('fName').value;
-// var email = document.getElementById('email').value;g
+var formUrl = 'http://localhost:8080/TRMS/contact';
 
 
+function submitPress() {
+    console.log("in contact Form");
 
-var formUrl = 'http://localhost:8080/TRMS/TRForm';
-
-
-function postForm() {
-    console.log("in postForm");
     let vg = document.getElementById("formid").submit;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -23,8 +14,8 @@ function postForm() {
     }
     xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
-    jsonBuilder();
     xhr.send(trash);
+    jsonBuilder();
 }
 
 function jsonBuilder() {
@@ -44,12 +35,22 @@ function jsonBuilder() {
     // console.log(json);
     // alert(json);
     return json;
-    break;
+
 }
+
+
+
+function clearInput() {
+    console.log("clear");
+    document.getElementById('formid').reset();
+}
+
+
 
 
 
 window.onload = function() {
     console.log("immediate invoked onload");
-    document.getElementById("formid").addEventListener("submit", postForm, true);
+    document.getElementById("submitButton").addEventListener("click", submitPress, true);
+    document.getElementById("button").addEventListener("click", clearInput, true);
 }

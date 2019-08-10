@@ -18,7 +18,7 @@ function submitPress() {
 
 function clearInput() {
     console.log("clear");
-    document.getElementById('regForm').elements.reset();
+    document.getElementById('regForm').reset();
 }
 
 
