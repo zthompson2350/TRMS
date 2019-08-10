@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.TRForm;
@@ -28,6 +29,8 @@ public class FormServlet extends HttpServlet {
 		TRForm trf = mapper.readValue(request.getInputStream(), TRForm.class);
 		PrintWriter out = response.getWriter();
 		try {
+			HttpSession session = request.getSession();
+			String username = (String)session.getAttribute("name");
 			fdi.submitForm(trf);
 			out.print("Tuition Reimbursment Form Submitted.");
 		} catch (SQLException e) {
