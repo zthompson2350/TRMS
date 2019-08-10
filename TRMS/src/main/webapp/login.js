@@ -17,6 +17,6 @@ function pageload() {
 
 
 window.onload = function () {
-    document.getElementById("login").addEventListener("click", login, false);
+    document.getElementById("login").addEventListener("click", login, true);
     pageload();
 }
