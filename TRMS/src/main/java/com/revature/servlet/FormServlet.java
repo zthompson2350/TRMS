@@ -13,12 +13,13 @@ import javax.servlet.http.HttpSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.TRForm;
 import com.revature.daoimpl.FormDaoImpl;
+import com.revature.daoimpl.UsernameDaoImpl;
 
 /**
  * Servlet implementation class FormServlet
  */
 public class FormServlet extends HttpServlet {
-	private static final long serialVersionUID = 4L;
+	private static final long serialVersionUID = 5L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -31,6 +32,9 @@ public class FormServlet extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			String username = (String)session.getAttribute("name");
+			UsernameDaoImpl udi = new UsernameDaoImpl();
+			int uid = udi.getUID(username);
+			trf.setEmployeeID(uid);
 			fdi.submitForm(trf);
 			out.print("Tuition Reimbursment Form Submitted.");
 		} catch (SQLException e) {
