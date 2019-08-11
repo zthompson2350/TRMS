@@ -12,13 +12,15 @@ public class Reimapp {
 	private String course_description;
 	private String course_type;
 	private String grading_format;
+	private float projected_reimbursement;
 	private String status;
 	public Reimapp() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Reimapp(String username, String firstname, String lastname, Date datesubmitted, Date datestart, Date dateend,
-			String course_description, String course_type, String grading_format, String status) {
+			String course_description, String course_type, String grading_format, float projected_reimbursement,
+			String status) {
 		super();
 		this.username = username;
 		this.firstname = firstname;
@@ -29,14 +31,15 @@ public class Reimapp {
 		this.course_description = course_description;
 		this.course_type = course_type;
 		this.grading_format = grading_format;
+		this.projected_reimbursement = projected_reimbursement;
 		this.status = status;
 	}
 	@Override
 	public String toString() {
-		return "reimapp [username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
+		return "Reimapp [username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", datesubmitted=" + datesubmitted + ", datestart=" + datestart + ", dateend=" + dateend
 				+ ", course_description=" + course_description + ", course_type=" + course_type + ", grading_format="
-				+ grading_format + ", status=" + status + "]";
+				+ grading_format + ", projected_reimbursement=" + projected_reimbursement + ", status=" + status + "]";
 	}
 	public String getUsername() {
 		return username;
@@ -91,6 +94,12 @@ public class Reimapp {
 	}
 	public void setGrading_format(String grading_format) {
 		this.grading_format = grading_format;
+	}
+	public float getProjected_reimbursement() {
+		return projected_reimbursement;
+	}
+	public void setProjected_reimbursement(float projected_reimbursement) {
+		this.projected_reimbursement = projected_reimbursement;
 	}
 	public String getStatus() {
 		return status;

@@ -25,7 +25,6 @@ var formUrl = 'http://localhost:8080/TRMS/Index';
 
 function logIn() {
     console.log("in logIn");
-    let vg = document.getElementById("login").submit;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         console.log("in ORSC " + xhr.readyState);

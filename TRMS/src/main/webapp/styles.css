@@ -47,8 +47,7 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid;
-  width: 100vw;
+  width: 99vw;
   height: 35vw;
 }
 

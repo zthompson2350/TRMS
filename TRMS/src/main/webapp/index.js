@@ -8,6 +8,7 @@ function logIn() {
 }
 
 
+<<<<<<< HEAD
 
 function setLoginButton() {
 
@@ -23,6 +24,8 @@ function setLoginButton() {
 }
 
 
+=======
+>>>>>>> af41ccbaf48e7d3467559d0989271f310ac74bc0
 var formUrl = 'http://localhost:8080/TRMS/Index';
 
 function logIn() {
@@ -44,9 +47,12 @@ function logIn() {
 
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> af41ccbaf48e7d3467559d0989271f310ac74bc0
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
