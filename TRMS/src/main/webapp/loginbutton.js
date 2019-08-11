@@ -6,9 +6,9 @@ function setLoginButton(username) {
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
-//    if(username !== null) {
-//    	loggedIn = true;
-//    }
+    if(username !== null) {
+    	loggedIn = true;
+    }
     
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
