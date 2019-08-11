@@ -1,13 +1,3 @@
-function logIn() {
-    document.getElementById("loader");
-    console.log("login clicked");
-}
-// var lastName = document.getElementById('lName').value;
-// var firstName = document.getElementById('fName').value;
-// var email = document.getElementById('email').value;g
-
-
-
 var formUrl = 'http://localhost:8080/TRMS/TRForm';
 
 
@@ -37,7 +27,6 @@ function jsonBuilder() {
         console.log(elements.length);
     }
     var json = JSON.stringify(obj);
-    // alert(json);
     return json;
 }
 

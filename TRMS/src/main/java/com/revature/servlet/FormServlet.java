@@ -21,6 +21,19 @@ import com.revature.daoimpl.UsernameDaoImpl;
 public class FormServlet extends HttpServlet {
 	private static final long serialVersionUID = 9L;
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		String username = (String)session.getAttribute("name");
+		String usernameJSON = "\"username\" : \"" + username + "\"";
+		PrintWriter out = response.getWriter();
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		out.print(usernameJSON);
+		out.flush();
+		out.close();
+	}
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
