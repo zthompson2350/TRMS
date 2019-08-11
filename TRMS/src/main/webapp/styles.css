@@ -114,18 +114,48 @@ li a:hover {
   width: 33.33%;
 }
 
-.onehalf{
+.onehalf {
   margin: auto;
   width: 45.5%;
 }
 
 .column {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: right;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: right;
+}
 
 body {
+  background-color: lightgreen;
+}
+
+table {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: green;
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  text-align: left;
+  border-color:  #4CAF50;
+}
+
+table tr {
+  background-color: #4CAF50;
+}
+
+table td {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: green;
+}
+
+table tr:hover {
   background-color: lightgreen;
 }
