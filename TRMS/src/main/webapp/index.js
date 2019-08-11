@@ -30,11 +30,9 @@ if (username !== null) {
 }
 
 window.onload = function() {
-    setLoginButton();
+    setLoginButton("johndoe");
     console.log("onload ready");
     document.getElementById("home").addEventListener("click", logIn, false);
-
-    //     alert()
 }
 
 
