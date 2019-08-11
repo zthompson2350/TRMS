@@ -1,15 +1,15 @@
 function setLoginButton(username) {
     //TODO get these values from the session
     let loggedIn = false;
-//    let username = "bobbert";
+    //    let username = "bobbert";
     console.log("setting login/logout button")
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
-//    if(username !== null) {
-//    	loggedIn = true;
-//    }
-    
+    if (username !== null) {
+        loggedIn = true;
+    }
+
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
     } else {

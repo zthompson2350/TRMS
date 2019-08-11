@@ -1,8 +1,5 @@
-//import {
-//    Http2ServerResponse
-//} from "http2";
-
 var formUrl = 'http://localhost:8080/TRMS/index';
+
 function logIn() {
     document.getElementById("loader");
     console.log("login clicked");
@@ -30,5 +27,5 @@ function logIn() {
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
-//     alert()
+    //     alert()
 }
