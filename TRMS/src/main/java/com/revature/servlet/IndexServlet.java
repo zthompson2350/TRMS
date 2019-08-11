@@ -30,5 +30,4 @@ public class IndexServlet extends HttpServlet {
 		out.flush();
 		out.close();
 	}
-
 }
