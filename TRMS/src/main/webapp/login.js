@@ -1,15 +1,17 @@
-function setLoginButton(loggedIn, username) {
-    //TODO get these values from the session
-    // loggedIn = false;
-    // username = "bobbert";
+import {
+    Http2ServerRequest
+} from "http2";
+
+function setLoginButton() {
+    loggedIn = false;
+    //username = "bobbert";
     console.log("setting login/logout button")
-	//var session = request.getSession();
+	  //var session = request.getSession();
     //username =session.getAttribute("name");
 
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
-    }
-    else {
+    } else {
         document.getElementById("login").innerHTML = "Log In";
         document.getElementById("login").setAttribute("href", "login.html");
     }
