@@ -24,17 +24,25 @@ function logIn() {
 
 }
 
+if (username !== null) {
+    loggedIn = true;
+    document.getElementById("home").addEventListener("click", setLoginButton, false);
+}
+
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
-<<<<<<< HEAD
+    document.getElementById("home").addEventListener("click", logIn, false);
+
     //     alert()
 }
-=======
-//     alert()
-}
+
+
+
+
+
+
 
 //GET USERNAME FROM SERVLET ON GET REQUEST
 //IF USERNAME IS NOT NULL
 //CALL setLoginButton(username)
->>>>>>> 609ee1fe2b922b3a52630ef20fd346262beb56d1
