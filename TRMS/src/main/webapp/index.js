@@ -1,8 +1,5 @@
-//import {
-//    Http2ServerResponse
-//} from "http2";
-
 var formUrl = 'http://localhost:8080/TRMS/index';
+
 function logIn() {
     document.getElementById("loader");
     console.log("login clicked");
@@ -27,11 +24,24 @@ function logIn() {
 
 }
 
+if (username !== null) {
+    loggedIn = true;
+    setLoginButton(username);
+}
+
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
-//     alert()
+    document.getElementById("home").addEventListener("click", logIn, false);
+
+    //     alert()
 }
+
+
+
+
+
+
 
 //GET USERNAME FROM SERVLET ON GET REQUEST
 //IF USERNAME IS NOT NULL
