@@ -22,9 +22,12 @@ public class FormServlet extends HttpServlet {
 	private static final long serialVersionUID = 9L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("attempting to do the thing");
 		ObjectMapper mapper = new ObjectMapper();
 		FormDaoImpl fdi = new FormDaoImpl();
 		TRForm trf = mapper.readValue(request.getInputStream(), TRForm.class);
@@ -49,10 +52,12 @@ public class FormServlet extends HttpServlet {
 		System.out.println("tEvent " + trf.gettEvent());
 		PrintWriter out = response.getWriter();
 		try {
+			System.out.println("getting userID");
 			HttpSession session = request.getSession();
-			String username = (String)session.getAttribute("name");
+			String username = (String) session.getAttribute("name");
 			UsernameDaoImpl udi = new UsernameDaoImpl();
 			int uid = udi.getUID(username);
+			// int uid = 1;
 			trf.setEmployeeID(uid);
 			System.out.println("Username + ID: " + username + " " + uid);
 			fdi.submitForm(trf);
