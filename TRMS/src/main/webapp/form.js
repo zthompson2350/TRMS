@@ -1,13 +1,3 @@
-function logIn() {
-    document.getElementById("loader");
-    console.log("login clicked");
-}
-// var lastName = document.getElementById('lName').value;
-// var firstName = document.getElementById('fName').value;
-// var email = document.getElementById('email').value;g
-
-
-
 var formUrl = 'http://localhost:8080/TRMS/TRForm';
 
 
@@ -34,15 +24,11 @@ function jsonBuilder() {
         var item = elements.item(i);
         obj[item.name] = item.value;
         console.log(elements.length);
-        // alert(obj);
-        // console.log(obj);
-        // break;
 
 
     }
     var json = JSON.stringify(obj);
-    // console.log(json);
-    // alert(json);
+
     return json;
     break;
 }

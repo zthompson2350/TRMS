@@ -1,61 +1,68 @@
-// import { loadavg } from "os";
-
-function on() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-function off() {
-    document.getElementById("overlay").style.display = "none";
-}
-
 function logIn() {
     document.getElementById("loader");
     console.log("login clicked");
 }
 
 //clear button to clear all user input
-function clearInput() {
-    document.getElementById('200').value = "";
-    console.log("clear");
+// function clearInput() {
+//     document.getElementById('').value = "";
+//     console.log("clear");
 
-}
+// }
 
-var clearBtn = document.getElementById('200');
-clearBtn.addEventListener("click", clearInput);
+// var clearBtn = document.getElementById('loader');
+// clearBtn.addEventListener("click", clearInput);
 //clear event logic done
 
 
 
 
-//submit request
-// function submitInput() {
-//     var ourRequest = new XMLHttpRequest();
+
+// var subBtn = document.getElementById('100');
+// subBtn.addEventListener("click", function() {
+//     // var ourRequest = new XMLHttpRequest();
 //     var javaData = document.getElementsByClassName("inp");
-//     console.log(javaData);
-// ourRequest.open('GET', 'server path goes here');
-// ourRequest.onload = function() {
-
-// };
-// ourRequest.send();
-// };
-
-var subBtn = document.getElementById('100');
-subBtn.addEventListener("click", function() {
-    // var ourRequest = new XMLHttpRequest();
-    var javaData = document.getElementsByClassName("inp");
-    console.log(javaData.value);
-});
+//     console.log(javaData.value);
+// });
 
 
+function setLoginButton() {
+    loggedIn = false;
+    username = "bobbert";
+
+    if (loggedIn) {
+        document.getElementById("login").innerHTML = username + " | Log Out";
+    } else {
+        document.getElementById("login").innerHTML = "Log In";
+        // document.getElementById("login").setAttribute("href", "login.html");
+    }
+}
+
+var formUrl = 'http://localhost:8080/TRMS/Index';
+
+function logIn() {
+    console.log("in logIn");
+    let vg = document.getElementById("login").submit;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        console.log("in ORSC " + xhr.readyState);
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.open("GET", formUrl, true);
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(JSON.parse(xhr.response));
+    }
+
+}
 
 
 
 
 
 window.onload = function() {
+    setLoginButton();
     console.log("onload ready");
-    //below lines need fixing, from vg.js
-    // document.getElementById('submitbuttonID').addEventListener("click", submitInput function, false);
-    // document.getElementById('submitbuttonID').addEventListener("click", submitInput function, false);
 
 }
