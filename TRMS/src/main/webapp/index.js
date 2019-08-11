@@ -32,3 +32,7 @@ window.onload = function() {
     console.log("onload ready");
 //     alert()
 }
+
+//GET USERNAME FROM SERVLET ON GET REQUEST
+//IF USERNAME IS NOT NULL
+//CALL setLoginButton(username)
