@@ -21,9 +21,11 @@ public class FormDaoImpl implements FormDao {
 
 	@Override
 	public void submitForm(TRForm form) throws SQLException {
+		System.out.println("IN SUBMITFORM");
 		Connection conn = cf.getConnection();
 		String sql = "{ CALL NEWFORM(?,?,?,?,?,?,?,?,?,?)";
 		CallableStatement call = conn.prepareCall(sql);
+		System.out.println("CallableStatement Prepared...");
 		/*
 		 * TODO: Get Employee Name -> Employee ID from session/remove Employee ID from
 		 * HTML
@@ -36,22 +38,33 @@ public class FormDaoImpl implements FormDao {
 		call.setInt(6, form.getZipcode());
 		call.setString(7, form.getCourseDescription());
 		call.setInt(8, form.getCost());
-		call.setString(9, form.getgFormat());
+		String gFormat = form.getgFormat();
+		System.out.println("Setting gFormat " + gFormat);
+		if(gFormat.equals("passfail")) {
+			call.setInt(9, 0);
+		} else if(gFormat.equals("seventyPassing")) {
+			call.setInt(9, 1);
+		} else if(gFormat.equals("eightyPassing")) {
+			call.setInt(9, 2);
+		}
 		String tEvent = form.gettEvent();
-		if (tEvent.equals("Certification 100%")) {
+		System.out.println("Setting tEvent " + tEvent);
+		if (tEvent.equals("certification")) {
 			call.setInt(10, 0);
-		} else if (tEvent.equals("Technical Training 90%")) {
+		} else if (tEvent.equals("technicalTraining")) {
 			call.setInt(10, 1);
-		} else if (tEvent.equals("University Course 80%")) {
+		} else if (tEvent.equals("universityCourse")) {
 			call.setInt(10, 2);
-		} else if (tEvent.equals("Certification Preparation Classes 75%")) {
+		} else if (tEvent.equals("certPrepClasses")) {
 			call.setInt(10, 3);
-		} else if (tEvent.equals("Seminars 60%")) {
+		} else if (tEvent.equals("seminars")) {
 			call.setInt(10, 4);
-		} else if (tEvent.equals("Other 30%")) {
+		} else if (tEvent.equals("other")) {
 			call.setInt(10, 5);
 		}
+		System.out.println("Executing...");
 		call.execute();
+		System.out.println("Executed...");
 	}
 
 	public List<Reimapp> getFormList(String username) throws SQLException {

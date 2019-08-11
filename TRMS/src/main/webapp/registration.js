@@ -39,4 +39,5 @@ window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("input").addEventListener("click", submitPress, true); //submit button
     document.getElementById("button").addEventListener("click", clearInput, true); //reset button
+    setLoginButton();
 }
