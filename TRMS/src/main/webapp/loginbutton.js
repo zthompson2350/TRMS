@@ -1,25 +1,12 @@
 function setLoginButton(username) {
-    //TODO get these values from the session
-    let loggedIn = false;
-    //    let username = "bobbert";
+//    let username = "bobbert";
     console.log("setting login/logout button")
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
-<<<<<<< HEAD
-    if (username !== null) {
-        loggedIn = true;
-    }
-
-=======
-    if(username !== null) {
-    	loggedIn = true;
-    }
-    
->>>>>>> 609ee1fe2b922b3a52630ef20fd346262beb56d1
-    if (loggedIn) {
-        document.getElementById("login").innerHTML = username + " | Log Out";
-    } else {
+   if(username !== null) {
+       document.getElementById("login").innerHTML = username + " | Log Out";
+   } else {
         document.getElementById("login").innerHTML = "Log In";
         document.getElementById("login").setAttribute("href", "login.html");
     }

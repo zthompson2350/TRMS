@@ -28,19 +28,10 @@
             <input type="submit" value="Filter" />
         </p>
     </form>
-    <div style="background-color:gainsboro">
-        <table class="table">
+    <div>
+        <table>
             <thead>
                 <tr>
-                    <th>
-                        username
-                    </th>
-                    <th>
-                        firstname
-                    </th>
-                    <th>
-                        lastname
-                    </th>
                     <th>
                         date submitted
                     </th>
@@ -51,31 +42,33 @@
                         date of course end
                     </th>
                     <th>
+                        course description
+                    </th>
+                    <th>
                         course type
                     </th>
                     <th>
                         grading format
                     </th>
                     <th>
+                        Projected Reimbursement
+                    </th>
+                    <th>
                         status
                     </th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Application) {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.EmployeeNumber)
+                        @Html.DisplayFor(modelItem => item.datesubmitted)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.firstName)
+                        @Html.DisplayFor(modelItem => item.datestart)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.lastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.location)
+                        @Html.DisplayFor(modelItem => item.dateend)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Description)
@@ -86,9 +79,10 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Approval)
                     </td>
-
+                    <td></td>
+                    <td></td>
                 </tr>
-                }
+            }
             </tbody>
         </table>
     </div>
