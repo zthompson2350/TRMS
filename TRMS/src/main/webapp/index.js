@@ -25,19 +25,6 @@ function logIn() {
 //     console.log(javaData.value);
 // });
 
-
-function setLoginButton() {
-    loggedIn = false;
-    username = "bobbert";
-
-    if (loggedIn) {
-        document.getElementById("login").innerHTML = username + " | Log Out";
-    } else {
-        document.getElementById("login").innerHTML = "Log In";
-        // document.getElementById("login").setAttribute("href", "login.html");
-    }
-}
-
 var formUrl = 'http://localhost:8080/TRMS/Index';
 
 function logIn() {
@@ -56,10 +43,6 @@ function logIn() {
     }
 
 }
-
-
-
-
 
 window.onload = function() {
     setLoginButton();
