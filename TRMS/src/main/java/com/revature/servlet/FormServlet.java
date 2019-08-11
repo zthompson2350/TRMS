@@ -32,7 +32,7 @@ public class FormServlet extends HttpServlet {
 		out.print(usernameJSON);
 		out.flush();
 		out.close();
-	}
+	}	
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

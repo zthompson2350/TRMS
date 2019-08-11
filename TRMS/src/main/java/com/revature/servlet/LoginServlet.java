@@ -16,7 +16,7 @@ import com.revature.daoimpl.UsernameDaoImpl;
  * Servlet implementation class LoginServlet
  */
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 14L;
+	private static final long serialVersionUID = 15L;
        
 
 	/**
@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
 			out.print("Welcome, " + name);
 			HttpSession session = request.getSession();
 			session.setAttribute("name", name);
+			request.getRequestDispatcher("index.html").forward(request, response);
 		} else {
 			request.getRequestDispatcher("registration.html").forward(request, response);
 		}
