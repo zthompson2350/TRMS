@@ -64,4 +64,14 @@
     <servlet-name>AboutServlet</servlet-name>
     <url-pattern>/about</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>com.revature.servlet.StatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/status</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -22,7 +22,7 @@ public class IndexServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
-		String usernameJSON = "\"username\" : \"" + username + "\"";
+		String usernameJSON = "{\"username\" : \"" + username + "\"}";
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
