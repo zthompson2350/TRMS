@@ -18,3 +18,13 @@ function setLoginButton() {
 window.onload = function () {
     setLoginButton(); //TODO get these from the session (session.isLoggedIn and session.name)
 }
+
+// GET USERNAME FROM SERVLET ON GET REQUEST
+// IF USERNAME IS NOT NULL
+// loggedIn = true;
+// IF loggedIn = true
+// SET UP LOGIN ON NAVBAR TO BE
+// {USERNAME} + LOGOUT BUTTON
+// ELSE
+// SET UP LOGIN ON NAVBAR TO BE
+// LOGIN BUTTON
