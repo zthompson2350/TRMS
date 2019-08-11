@@ -46,4 +46,5 @@ function jsonBuilder() {
 window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("input").addEventListener("click", postForm, false);
+    setLoginButton();
 }
