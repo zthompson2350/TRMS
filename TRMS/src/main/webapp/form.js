@@ -13,17 +13,18 @@ var formUrl = 'http://localhost:8080/TRMS/TRForm';
 
 function postForm() {
     console.log("in postForm");
-    let vg = document.getElementById("formid").submit;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         console.log("in ORSC " + xhr.readyState);
         if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.responseText);
+            console.log("responseText " + xhr.responseText);
+            console.log("readyState " + xhr.readyState);
+            console.log("status " + xhr.status);
         }
     }
     xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
-    jsonBuilder();
+    alert("Sending...");
     xhr.send(trash);
 }
 
@@ -34,22 +35,15 @@ function jsonBuilder() {
         var item = elements.item(i);
         obj[item.name] = item.value;
         console.log(elements.length);
-        // alert(obj);
-        // console.log(obj);
-        // break;
-
-
     }
     var json = JSON.stringify(obj);
-    // console.log(json);
     // alert(json);
     return json;
-    break;
 }
 
 
 
 window.onload = function() {
     console.log("immediate invoked onload");
-    document.getElementById("formid").addEventListener("submit", postForm, true);
+    document.getElementById("input").addEventListener("click", postForm, false);
 }

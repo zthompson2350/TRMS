@@ -1,6 +1,7 @@
 package com.revature.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,9 +22,13 @@ public class IndexServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
-		response.
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		String usernameJSON = "\"username\" : \"" + username + "\"";
+		PrintWriter out = response.getWriter();
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		out.print(usernameJSON);
+		out.flush();
+		out.close();
 	}
 
 }
