@@ -27,7 +27,7 @@ public class StatusServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
-//		String usernameJSON = "\"username\" : \"" + username + "\"";
+		String usernameJSON = "\"username\" : \"" + username + "\"";
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
@@ -36,31 +36,31 @@ public class StatusServlet extends HttpServlet {
 //		out.close();
 		FormDaoImpl fdi = new FormDaoImpl();
 		List<Reimapp> rmap = null;
-		if(!username.equals(null)) {
-			try {
-				rmap = fdi.getFormList(username);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			int i = 0;
-			while (i < rmap.size()) {				
-				String rmapJSON = "{\n\"username\" : \"" + rmap.get(i).getUsername() + "\",\n"
-						+ "\"firstname\" : \"" + rmap.get(i).getFirstname() + "\",\n"
-						+ "\"lastname\" : \"" + rmap.get(i).getLastname() + "\",\n"
-						+ "\"datesubmitted\" : \"" + rmap.get(i).getDatesubmitted() + "\",\n"
-						+ "\"datestart\" : \"" + rmap.get(i).getDatestart() + "\",\n"
-						+ "\"dateend\" : \"" + rmap.get(i).getDateend() + "\",\n"
-						+ "\"course_description\" : \"" + rmap.get(i).getCourse_description() + "\",\n"
-						+ "\"course_type\" : \"" + rmap.get(i).getCourse_type() + "\",\n"
-						+ "\"grading_format\" : \"" + rmap.get(i).getGrading_format() + "\",\n"
-						+ "\"projected_reimbursement\" : \"" + rmap.get(i).getProjected_reimbursement() + "\",\n"
-						+ "\"status\" : \"" + rmap.get(i).getStatus() + "\"\n}";
-				out.print(rmapJSON);
-				i++;
-			}
-		}
+//		if(!username.equals(null)) {
+//			try {
+//				rmap = fdi.getFormList(username);
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//			int i = 0;
+//			while (i < rmap.size()) {				
+//				String rmapJSON = "{\n\"username\" : \"" + rmap.get(i).getUsername() + "\",\n"
+//						+ "\"firstname\" : \"" + rmap.get(i).getFirstname() + "\",\n"
+//						+ "\"lastname\" : \"" + rmap.get(i).getLastname() + "\",\n"
+//						+ "\"datesubmitted\" : \"" + rmap.get(i).getDatesubmitted() + "\",\n"
+//						+ "\"datestart\" : \"" + rmap.get(i).getDatestart() + "\",\n"
+//						+ "\"dateend\" : \"" + rmap.get(i).getDateend() + "\",\n"
+//						+ "\"course_description\" : \"" + rmap.get(i).getCourse_description() + "\",\n"
+//						+ "\"course_type\" : \"" + rmap.get(i).getCourse_type() + "\",\n"
+//						+ "\"grading_format\" : \"" + rmap.get(i).getGrading_format() + "\",\n"
+//						+ "\"projected_reimbursement\" : \"" + rmap.get(i).getProjected_reimbursement() + "\",\n"
+//						+ "\"status\" : \"" + rmap.get(i).getStatus() + "\"\n}";
+//				out.print(rmapJSON);
+//				i++;
+//			}
+//		}
 		out.close();
 		
 	}

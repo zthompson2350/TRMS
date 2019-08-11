@@ -1,5 +1,19 @@
 var formUrl = 'http://localhost:8080/TRMS/TRForm';
 
+function logIn() {
+	console.log("in logIn");
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", formUrl, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		console.log("in ORSC " + xhr.readyState);
+		console.log(JSON.parse(xhr.response));
+		username = JSON.parse(xhr.response);
+		if (username !== null) {
+			setLoginButton(username.username);
+		}
+	}
+}
 
 function postForm() {
     console.log("in postForm");
@@ -35,5 +49,5 @@ function jsonBuilder() {
 window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("input").addEventListener("click", postForm, false);
-    setLoginButton();
+    logIn();
 }

@@ -1,3 +1,20 @@
+var formUrl = 'http://localhost:8080/TRMS/Status';
+
+function logIn() {
+	console.log("in logIn");
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", formUrl, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		console.log("in ORSC " + xhr.readyState);
+		console.log(JSON.parse(xhr.response));
+		username = JSON.parse(xhr.response);
+		if (username !== null) {
+			setLoginButton(username.username);
+		}
+	}
+}
+
 $(document).ready(function() {
 
 
@@ -86,7 +103,6 @@ $(document).ready(function() {
 
 
 
-var formUrl = 'http://localhost:8080/TRMS/Status';
 
 
 function postForm() {
@@ -124,4 +140,5 @@ function jsonBuilder() {
 window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("formid").addEventListener("submit", postForm, true);
+    logIn();
 }
