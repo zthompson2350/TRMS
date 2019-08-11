@@ -1,11 +1,15 @@
-function setLoginButton() {
+function setLoginButton(username) {
     //TODO get these values from the session
     let loggedIn = false;
-    let username = "bobbert";
+//    let username = "bobbert";
     console.log("setting login/logout button")
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
+//    if(username !== null) {
+//    	loggedIn = true;
+//    }
+    
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
     } else {
@@ -13,10 +17,6 @@ function setLoginButton() {
         document.getElementById("login").setAttribute("href", "login.html");
     }
 }
-
-
-
-var formUrl = 'http://localhost:8080/TRMS/Index';
 
 function logIn() {
     console.log("in logIn");
@@ -32,9 +32,7 @@ function logIn() {
     if (xhr.readyState == 4 && xhr.status == 200) {
         console.log(JSON.parse(xhr.response));
         setLoginButton();
-
     }
-
 }
 
 // making a nested variable global
