@@ -36,12 +36,12 @@ function logIn() {
 }
 
 // making a nested variable global
-let currentUser = global.getUser().then(
-    Currentusers =>
-    Promise.all(
-        currentUser.map(self.displayUserName)
-    )
-);
+// let currentUser = global.getUser().then(
+//     Currentusers =>
+//     Promise.all(
+//         currentUser.map(self.displayUserName)
+//     )
+// );
 
 
 window.onload = function() {
