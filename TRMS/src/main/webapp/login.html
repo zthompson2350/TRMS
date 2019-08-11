@@ -2,31 +2,34 @@
 <html>
 
 <head>
-    <title>Log In Page</title>
-    <link rel="stylesheet" href="styles.css">
+<title>Log In Page</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="form.html">Tuition Reimbursement Form</a></li>
-        <!-- <li><a href="contact.html">Contact</a></li> -->
-        <li><a href="about.html">About</a></li>
-        <li><a >Register</a></li>
-    </ul>
-    <br>
-    <div class = "onehalf center" >
-    <h1 class = "text">Log In</h1>
-        <form class = "column" enctype="application/json" action="login" method="POST" id="loginForm">
-            <span>
-                <input type="text" id="username" placeholder="username" /><br><br>
-                <input type="password" id="password" placeholder="password" /><br><br>
-                <input type="submit" name="submitme" id = "LoginFormSubmit" value="Log In">
-            </span>
-        </form>
-    </div>
-        
+	<ul>
+		<li><a class="active" href="index.html">Home</a></li>
+		<li><a href="news.html">News</a></li>
+		<li><a href="form.html">Tuition Reimbursement Form</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="registration.html">Register</a></li>
+		<li><a href="status.html">Status of your Applications</a></li>
+		<li class="loader"><a id="login"></a></li>
+		<li><a>Register</a></li>
+	</ul>
+	<br>
+	<div class="onehalf center">
+		<h1 class="text">Log In</h1>
+		<form class="column" enctype="application/json" action="login"
+			method="POST" id="loginForm">
+			<span> <input type="text" id="username" placeholder="username" name="username" /><br>
+			<br> <input type="password" id="password" placeholder="password" name="password" /><br>
+			<br> <input type="submit" name="submitme" id="LoginFormSubmit"
+				value="Log In">
+			</span>
+		</form>
+	</div>
+	<script type="text/javascript" src="login.js"></script>
 </body>
 
 </html>
