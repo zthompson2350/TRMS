@@ -18,32 +18,23 @@
         <li class="loader"> <a id="login"></a></li>
     </ul>
     <h1 class="text">Tuition Reimbursement Form</h1>
-    <form id="formid" method="POST" class="onehalf">
-
-        <h3 id="username">[username | Firstname Lastname]</h4> <!--to be filled in with javascript-->
-        <h3 id="date">[Current Date]</h4> <!--to be filled in with javascript-->
-        <!-- <h2>Employee info</h2>
-        First name:
-        <input type="text" id="fname" name="firstname">
-        Last name:
-        <input type="text" id="lname" name="lastname">
-        Email:
-        <input type="email" id="email" name="email">
-        Employee ID:
-        <input type="text" id="emplID" name="employeeID">
-        <br><br> -->
+    <div class="onehalf">
+        <h3 id="username">[username | Firstname Lastname]</h3> <!--to be filled in with javascript-->
+        <h3 id="date">[Current Date]</h3> <!--to be filled in with javascript-->
         <h2>Course Information</h2>
+    </div>
+    <form id="formid" method="POST" class="onehalf">
         Date Course Begins
         <input type="date" id="courseBeginDate" name="startDate">
         Date Course Ends
         <input type="date" id="courseEndDate" name="endDate"><br><br>
         Location:
         <input type="text" id="courseCity" name="locationCity" placeholder="City">
-        <input type="text" id="courseState" name="locationState" placeholder = "State">
-        <input type="number" id="courseZip" name="zipcode" placeholder = Zip>
+        <input type="text" id="courseState" name="locationState" placeholder="State">
+        <input type="number" id="courseZip" name="zipcode" placeholder=Zip>
         <br><br>
         Course Description:
-        <input type="text" name="courseDescription" placeholder = "Course Description">
+        <input type="text" name="courseDescription" placeholder="Course Description">
         Cost:
         <input type="number" name="cost"><br><br>
         Grading Format:
@@ -52,7 +43,7 @@
             <option value="eightyPassing">80% Passing Grade</option>
         </select>
         Type of Event:
-        <select name = "tEvent">
+        <select name="tEvent">
             <option value="certification">Certification 100%</option>
             <option value="technicalTraining">Technical Training 90%</option>
             <option value="universityCourse">University Course 80%</option>
@@ -69,4 +60,5 @@
     <script type="text/javascript" src="form.js"></script>
 
 </body>
+
 </html>
