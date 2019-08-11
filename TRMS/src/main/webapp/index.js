@@ -26,7 +26,7 @@ function logIn() {
 
 if (username !== null) {
     loggedIn = true;
-    document.getElementById("home").addEventListener("click", setLoginButton, false);
+    setLoginButton(username);
 }
 
 window.onload = function() {
