@@ -18,29 +18,37 @@ function logIn() {
     xhr.open("GET", formUrl, true);
     if (xhr.readyState == 4 && xhr.status == 200) {
         console.log(JSON.parse(xhr.response));
-        setLoginButton();
+        username = JSON.parse(xhr.response);
+        if (username !== null) {
+            loggedIn = true;
+            setLoginButton(username);
+        }
+
 
     }
 
-}
+    // if (username !== null) {
+    //     loggedIn = true;
+    //     setLoginButton(username);
+    // }
 
-if (username !== null) {
-    loggedIn = true;
-    setLoginButton(username);
-}
+    window.onload = function() {
+        setLoginButton();
+        logIn();
+        console.log("onload ready");
+        document.getElementById("home").addEventListener("click", logIn, false);
 
-window.onload = function() {
-    setLoginButton("johndoe");
-    console.log("onload ready");
-    document.getElementById("home").addEventListener("click", logIn, false);
-}
-
-
-
-
+        alert(xhr.responseText);
+        alert(JSON.parse(xhr.response));
+    }
 
 
 
-//GET USERNAME FROM SERVLET ON GET REQUEST
-//IF USERNAME IS NOT NULL
-//CALL setLoginButton(username)
+
+
+
+
+    //GET USERNAME FROM SERVLET ON GET REQUEST
+    //IF USERNAME IS NOT NULL
+    //CALL setLoginButton(username)
+};

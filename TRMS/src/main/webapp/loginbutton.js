@@ -4,11 +4,15 @@ function setLoginButton(username) {
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
-   if(username !== null) {
-       document.getElementById("login").innerHTML = username + " | Log Out";
-   } else {
-	   document.getElementById("login").innerHTML = "Log In";
-	   document.getElementById("login").setAttribute("href", "login.html");
+    if (username !== null) {
+        loggedIn = true;
+    }
+
+    if (loggedIn) {
+        document.getElementById("login").innerHTML = username + " | Log Out";
+    } else {
+        document.getElementById("login").innerHTML = "Log In";
+        document.getElementById("login").setAttribute("href", "login.html");
     }
 }
 
@@ -30,12 +34,12 @@ function logIn() {
 }
 
 // making a nested variable global
-let currentUser = global.getUser().then(
-    Currentusers =>
-    Promise.all(
-        currentUser.map(self.displayUserName)
-    )
-);
+// let currentUser = global.getUser().then(
+//     Currentusers =>
+//     Promise.all(
+//         currentUser.map(self.displayUserName)
+//     )
+// );
 
 
 window.onload = function() {
