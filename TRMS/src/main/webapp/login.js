@@ -1,13 +1,16 @@
 import {
     Http2ServerRequest
 } from "http2";
+import {
+    promises
+} from "fs";
 
 function setLoginButton() {
     loggedIn = false;
     //username = "bobbert";
     console.log("setting login/logout button")
-	  //var session = request.getSession();
-    //username =session.getAttribute("name");
+        //var session = request.getSession();
+        //username =session.getAttribut e("name");
 
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
