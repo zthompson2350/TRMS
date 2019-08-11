@@ -12,15 +12,87 @@
 <body>
     <ul>
         <li><a class="active" href="index.html">Home</a></li>
-		<li><a href="news.html">News</a></li>
-		<li><a href="form.html">Tuition Reimbursement Form</a></li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="registration.html">Register</a></li>
-		<li><a href="status.html">Status of your Applications</a></li>
-		<li class="loader"> <a id="login"></a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="form.html">Tuition Reimbursement Form</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="status.html">Status of your Applications</a></li>
+        <li class="loader"> <a id="login"></a></li>
     </ul>
-    <h1>Status Page</h1>
-    
+
+    <br />
+    <h2>Employee Reimbursement Applications Status</h2><br />
+    <form>
+        <p>
+            username <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <div style="background-color:gainsboro">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        username
+                    </th>
+                    <th>
+                        firstname
+                    </th>
+                    <th>
+                        lastname
+                    </th>
+                    <th>
+                        date submitted
+                    </th>
+                    <th>
+                        date of course start
+                    </th>
+                    <th>
+                        date of course end
+                    </th>
+                    <th>
+                        course type
+                    </th>
+                    <th>
+                        grading format
+                    </th>
+                    <th>
+                        status
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Application) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Approval)
+                    </td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
     <script type="text/javascript" src="loginbutton.js"></script>
 </body>
 

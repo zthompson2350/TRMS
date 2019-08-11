@@ -78,7 +78,7 @@ public class FormDaoImpl implements FormDao {
 		while (rs.next()) {
 			f = new Reimapp(rs.getString(1), rs.getString(2), rs.getString(3), rs.getDate(4), 
 					rs.getDate(5), rs.getDate(6), rs.getString(7), rs.getString(8), 
-					rs.getString(9), rs.getString(10));
+					rs.getString(9), rs.getFloat(10), rs.getString(11));
 			formList.add(f);
 		}
 		return formList;
