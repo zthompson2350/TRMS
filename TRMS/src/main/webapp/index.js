@@ -27,5 +27,14 @@ function logIn() {
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
+<<<<<<< HEAD
     //     alert()
 }
+=======
+//     alert()
+}
+
+//GET USERNAME FROM SERVLET ON GET REQUEST
+//IF USERNAME IS NOT NULL
+//CALL setLoginButton(username)
+>>>>>>> 609ee1fe2b922b3a52630ef20fd346262beb56d1
