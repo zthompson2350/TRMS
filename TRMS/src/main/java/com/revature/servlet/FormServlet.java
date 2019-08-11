@@ -19,7 +19,7 @@ import com.revature.daoimpl.UsernameDaoImpl;
  * Servlet implementation class FormServlet
  */
 public class FormServlet extends HttpServlet {
-	private static final long serialVersionUID = 5L;
+	private static final long serialVersionUID = 9L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -31,7 +31,25 @@ public class FormServlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		FormDaoImpl fdi = new FormDaoImpl();
 		TRForm trf = mapper.readValue(request.getInputStream(), TRForm.class);
-		System.out.println(trf);
+//		private Date startDate;
+//		private Date endDate;
+//		private String locationCity;
+//		private String locationState;
+//		private int zipcode;
+//		private String courseDescription;
+//		private int cost;
+//		private String gFormat;
+//		private String tEvent;
+//		private int employeeID;
+		System.out.println("startDate " + trf.getStartDate());
+		System.out.println("endDate " + trf.getEndDate());
+		System.out.println("locationCity " + trf.getLocationCity());
+		System.out.println("locationState " + trf.getLocationState());
+		System.out.println("zipcode " + trf.getZipcode());
+		System.out.println("courseDescription " + trf.getCourseDescription());
+		System.out.println("cost " + trf.getCost());
+		System.out.println("gFormat " + trf.getgFormat());
+		System.out.println("tEvent " + trf.gettEvent());
 		PrintWriter out = response.getWriter();
 		try {
 			System.out.println("getting userID");
@@ -41,6 +59,7 @@ public class FormServlet extends HttpServlet {
 			int uid = udi.getUID(username);
 			// int uid = 1;
 			trf.setEmployeeID(uid);
+			System.out.println("Username + ID: " + username + " " + uid);
 			fdi.submitForm(trf);
 			out.print("Tuition Reimbursment Form Submitted.");
 		} catch (SQLException e) {

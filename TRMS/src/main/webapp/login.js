@@ -1,7 +1,3 @@
-// function login() {
-
-// }
-
 function setLoginButton(loggedIn, username) {
     //TODO get these values from the session
     // loggedIn = false;

@@ -4,7 +4,7 @@ function submitPress() {
     console.log("in registration Form");
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        console.log("in ORSC " + xhr.readyState);
+        alert("in ORSC " + xhr.readyState);
         if (xhr.readyState == 4 && xhr.status == 200) {
         }
     }
@@ -12,7 +12,7 @@ function submitPress() {
     var trash = jsonBuilder();
 //    alert(trash);
     console.log(xhr.status);
-    alert("Sending...")
+    alert("Sending...");
     xhr.send(trash);
 }
 
