@@ -10,6 +10,7 @@ function setLoginButton() {
     }
 }
 
+
 window.onload = function() {
     document.getElementById("login").addEventListener("click", login, false);
     setLoginButton(); //TODO get these from the session (session.isLoggedIn and session.name)
