@@ -6,17 +6,10 @@ function setLoginButton(username) {
         //var session = request.getSession();
         //username =session.getAttribute("name");
 
-<<<<<<< HEAD
     if (username !== null) {
         loggedIn = true;
     }
 
-=======
-    if(username !== null) {
-    	loggedIn = true;
-    }
-    
->>>>>>> 609ee1fe2b922b3a52630ef20fd346262beb56d1
     if (loggedIn) {
         document.getElementById("login").innerHTML = username + " | Log Out";
     } else {

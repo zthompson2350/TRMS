@@ -34,7 +34,8 @@ window.onload = function() {
     console.log("onload ready");
     document.getElementById("home").addEventListener("click", logIn, false);
 
-    //     alert()
+    alert(xhr.responseText);
+    alert(JSON.parse(xhr.response));
 }
 
 
