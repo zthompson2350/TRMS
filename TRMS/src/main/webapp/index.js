@@ -2,13 +2,13 @@ import {
     Http2ServerResponse
 } from "http2";
 
+var formUrl = 'http://localhost:8080/TRMS/index';
 function logIn() {
     document.getElementById("loader");
     console.log("login clicked");
 }
 
 
-<<<<<<< HEAD
 
 function setLoginButton() {
 
@@ -24,13 +24,10 @@ function setLoginButton() {
 }
 
 
-=======
->>>>>>> af41ccbaf48e7d3467559d0989271f310ac74bc0
 var formUrl = 'http://localhost:8080/TRMS/Index';
 
 function logIn() {
     console.log("in logIn");
-    let vg = document.getElementById("login").submit;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         console.log("in ORSC " + xhr.readyState);
@@ -47,12 +44,6 @@ function logIn() {
 
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> af41ccbaf48e7d3467559d0989271f310ac74bc0
 window.onload = function() {
     setLoginButton();
     console.log("onload ready");
