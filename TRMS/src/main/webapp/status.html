@@ -22,14 +22,8 @@
 
     <br />
     <h2>Employee Reimbursement Applications Status</h2><br />
-    <form>
-        <p>
-            username <input type="text" asp-for="SearchString" />
-            <input type="submit" value="Filter" />
-        </p>
-    </form>
     <div>
-        <table>
+        <table id = "formTable">
             <thead>
                 <tr>
                     <th>
@@ -59,7 +53,6 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Application) {
                 <tr>
                     <td id="datesubmitted">
                     date submitted    
@@ -82,7 +75,6 @@
                     <td id ="projreim"> projected reimbursement</td>
                     <td id="status"> status </td>
                 </tr>
-            }
             </tbody>
         </table>
     </div>
