@@ -34,10 +34,10 @@ function getStatus() {
             
             console.log(status);
             console.log(status[0]);
-            
-            document.getElementById("datesubmitted").innerHTML = status[0].datesubmitted;
-            document.getElementById("datestart").innerHTML = status[0].datestart;
-            document.getElementById("dateend").innerHTML = status[0].dateend;
+
+            document.getElementById("datesubmitted").innerHTML = new Date(status[0].datesubmitted);
+            document.getElementById("datestart").innerHTML = new Date(status[0].datestart);
+            document.getElementById("dateend").innerHTML = new Date(status[0].dateend);
             document.getElementById("coursedescription").innerHTML = status[0].course_description;
             document.getElementById("type").innerHTML = status[0].course_type;
             document.getElementById("gradingformat").innerHTML = status[0].grading_format;

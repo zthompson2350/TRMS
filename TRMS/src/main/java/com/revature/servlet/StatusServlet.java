@@ -26,6 +26,7 @@ public class StatusServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("In status doGet");
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
 		String usernameJSON = "{\"username\" : \"" + username + "\"}";
