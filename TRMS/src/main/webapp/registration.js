@@ -3,16 +3,17 @@ var formUrl = 'http://localhost:8080/TRMS/register';
 function submitPress() {
     console.log("in registration Form");
     var xhr = new XMLHttpRequest();
+    xhr.open("POST", formUrl, true);
     xhr.onreadystatechange = function() {
         console.log("in ORSC " + xhr.readyState);
-        if (xhr.readyState == 4 && xhr.status == 200) {}
+        if (xhr.readyState == 4) {
+        }
     }
-    xhr.open("POST", formUrl, true);
     var trash = jsonBuilder();
     console.log(xhr.status);
     console.log(xhr.readyState);
     alert("Sending...")
-    xhr.send(trash);
+    xhr.send(trash);        	
 }
 
 function clearInput() {
@@ -22,7 +23,7 @@ function clearInput() {
 
 
 function jsonBuilder() {
-    var elements = document.get("regForm").elements;
+    var elements = document.getElementById("regForm").elements;
     var obj = {};
     for (var i = 0; i < elements.length; i++) {
         var item = elements.item(i);
@@ -37,6 +38,6 @@ function jsonBuilder() {
 
 window.onload = function() {
     console.log("immediate invoked onload");
-    document.getElementById("input").addEventListener("click", submitPress, true); //submit button
-    document.getElementById("button").addEventListener("click", clearInput, true); //reset button
+    document.getElementById("input").addEventListener("click", submitPress, false); //submit button
+    document.getElementById("button").addEventListener("click", clearInput, false); //reset button
 }
