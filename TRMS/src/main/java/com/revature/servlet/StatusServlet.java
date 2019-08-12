@@ -3,7 +3,6 @@ package com.revature.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.revature.beans.Reimapp;
 import com.revature.daoimpl.FormDaoImpl;
+import com.revature.util.ArrayListToJSON;
 
 /**
  * Servlet implementation class StatusServlet
@@ -36,25 +37,39 @@ public class StatusServlet extends HttpServlet {
 		out.close();
 		
 		
-//		HttpSession session = request.getSession();
-//		String username = (String)session.getAttribute("name");
-//		String usernameJSON = "\"username\" : \"" + username + "\"";
-//		PrintWriter out = response.getWriter();
-//		response.setContentType("application/json");
-//		response.setCharacterEncoding("UTF-8");
-//		out.print(usernameJSON);
-//		out.flush();
-//		out.close();
-//		FormDaoImpl fdi = new FormDaoImpl();
-//		List<Reimapp> rmap = null;
-//		if(!username.equals(null)) {
-//			try {
-//				rmap = fdi.getFormList(username);
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
+
+		out.close();
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String username = (String)session.getAttribute("name");
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		FormDaoImpl fdi = new FormDaoImpl();
+		List<Reimapp> rmap = null;
+		String json = null;
+		PrintWriter out = response.getWriter();
+		if(!username.equals(null)) {
+			try {
+				rmap = fdi.getFormList(username);
+				json = ArrayListToJSON.convert(rmap);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+				
+			if(json != null) {
+				out.print(json);
+			}
+			out.flush();
+			out.close();
 //			int i = 0;
 //			while (i < rmap.size()) {				
 //				String rmapJSON = "{\n\"username\" : \"" + rmap.get(i).getUsername() + "\",\n"
@@ -71,17 +86,7 @@ public class StatusServlet extends HttpServlet {
 //				out.print(rmapJSON);
 //				i++;
 //			}
-//		}
-		out.close();
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		}
 	}
 
 }
