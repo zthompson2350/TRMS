@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("In login doPost");
 		UsernameDaoImpl udi = new UsernameDaoImpl();
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
