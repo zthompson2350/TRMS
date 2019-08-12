@@ -18,13 +18,13 @@ import com.revature.daoimpl.EmployeeDaoImpl;
  * Servlet implementation class RegistrationServlet
  */
 public class RegistrationServlet extends HttpServlet {
-	private static final long serialVersionUID = 16L;
+	private static final long serialVersionUID = 17L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
-		String usernameJSON = "\"username\" : \"" + username + "\"";
+		String usernameJSON = "{\"username\" : \"" + username + "\"}";
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
