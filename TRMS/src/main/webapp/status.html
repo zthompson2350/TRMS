@@ -62,25 +62,25 @@
                 @foreach (var item in Model.Application) {
                 <tr>
                     <td id="datesubmitted">
-                        @Html.DisplayFor(modelItem => item.datesubmitted)
+                    date submitted    
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.datestart)
+                    <td id = "datestart">
+                        date course start
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.dateend)
+                    <td id = "dateend">
+                        date course end
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                    <td id= "coursedescription">
+                        description
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cost)
+                    <td id= "type">
+                        type
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Approval)
+                    <td id="gradingformat">
+                        grading format
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td id ="projreim"> projected reimbursement</td>
+                    <td id="status"> status </td>
                 </tr>
             }
             </tbody>
