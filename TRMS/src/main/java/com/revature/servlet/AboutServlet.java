@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class AboutServlet
  */
 public class AboutServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,7 +22,7 @@ public class AboutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("name");
-		String usernameJSON = "\"username\" : \"" + username + "\"";
+		String usernameJSON = "{\"username\" : \"" + username + "\"}";
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

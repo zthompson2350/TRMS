@@ -1,20 +1,5 @@
 var formUrl = 'http://localhost:8080/TRMS/register';
 
-function logIn() {
-	console.log("in logIn");
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", formUrl, true);
-	xhr.send();
-	xhr.onreadystatechange = function() {
-		console.log("in ORSC " + xhr.readyState);
-		console.log(JSON.parse(xhr.response));
-		username = JSON.parse(xhr.response);
-		if (username !== null) {
-			setLoginButton(username.username);
-		}
-	}
-}
-
 function submitPress() {
     console.log("in registration Form");
     var xhr = new XMLHttpRequest();
@@ -54,5 +39,4 @@ window.onload = function() {
     console.log("immediate invoked onload");
     document.getElementById("input").addEventListener("click", submitPress, true); //submit button
     document.getElementById("button").addEventListener("click", clearInput, true); //reset button
-    logIn();
 }
