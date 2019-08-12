@@ -1,7 +1,7 @@
 var formUrl = 'http://localhost:8080/TRMS/TRForm';
 
 function logIn() {
-	console.log("in logIn");
+    console.log("in logIn");
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", formUrl, true);
 	xhr.send();

@@ -9,8 +9,3 @@ function setLoginButton(username) {
         document.getElementById("login").innerHTML = "Log In";
     }
 }
-
-
-window.onload = function() {
-    setLoginButton();
-}
