@@ -9,8 +9,10 @@ function logIn() {
 		console.log("in ORSC " + xhr.readyState);
 		console.log(JSON.parse(xhr.response));
 		username = JSON.parse(xhr.response);
-		if (username !== null) {
+		if (username.username !== "null") {
 			setLoginButton(username.username);
+		} else {
+			setLoginButton(null);
 		}
 	}
 }

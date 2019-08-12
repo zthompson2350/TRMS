@@ -1,20 +1,42 @@
 var formUrl = 'http://localhost:8080/TRMS/status';
 
 function logIn() {
-	console.log("in logIn");
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", formUrl, true);
-	xhr.send();
-	xhr.onreadystatechange = function() {
-		console.log("in ORSC " + xhr.readyState);
-		console.log(JSON.parse(xhr.response));
-		username = JSON.parse(xhr.response);
-		if (username.username !== "null") {
-			setLoginButton(username.username);
-		} else {
-			setLoginButton(null);
-		}
-	}
+    console.log("in logIn");
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", formUrl, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        console.log("in ORSC " + xhr.readyState);
+        console.log(JSON.parse(xhr.response));
+        username = JSON.parse(xhr.response);
+        if (username.username !== "null") {
+            setLoginButton(username.username);
+        } else {
+            setLoginButton(null);
+        }
+    }
+}
+
+function getStatus() {
+    console.log("in getStatus")
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", formUrl, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        console.log("in ORSC" + xhr.readyState);
+        var status = JSON.parse(xhr.response);
+
+        console.log(status);
+        console.log("status: " +status.username);
+
+        document.getElementById("datesubmitted").innerHTML = status.datesubmitted;
+
+
+    }
+
+
+
 }
 
 //$(document).ready(function() {
@@ -138,8 +160,9 @@ function logIn() {
 //need to have JSON PARSE
 
 
-window.onload = function() {
+window.onload = function () {
     console.log("immediate invoked onload");
-//    document.getElementById("formid").addEventListener("submit", postForm, true);
+    //    document.getElementById("formid").addEventListener("submit", postForm, true);
     logIn();
+    getStatus();
 }
